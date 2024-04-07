@@ -32,15 +32,10 @@
 
   :aliases {"lint" ["with-profile" "+lint" "midje"]}
 
+  :plugins [[com.github.liquidz/antq "RELEASE"]]
+
   ; Exclude the compiled Thrift classes from the Jar file.
   :jar-exclusions [#"clj_thrift/fakes"]
-
-  :repositories {"sonatype" {:url "http://oss.sonatype.org/content/repositories/releases"
-                             :snapshots false
-                             :releases {:checksum :fail :update :always}}
-                 "sonatype-snapshots" {:url "http://oss.sonatype.org/content/repositories/snapshots"
-                                       :snapshots true
-                                       :releases {:checksum :fail :update :always}}}
 
   :deploy-repositories [["releases" {:url "https://clojars.org/repo" :username :gpg :password :gpg}]
                         ["snapshots" {:url "https://clojars.org/repo" :username :gpg :password :gpg}]])
